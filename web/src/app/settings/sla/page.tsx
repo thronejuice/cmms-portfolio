@@ -1,0 +1,5 @@
+import { Card, PageHeader, Table } from "@/components/ui";
+import { ESCALATION_BREACH_TO, SLA_DEFAULTS, fmtMin } from "@/lib/sla";
+export default function SlaSettings() { return (<><PageHeader title="ตั้งค่า SLA" sub="ค่าเริ่มต้นสำหรับทดลอง (Proposed SLA) · ใบเดิมคงค่าเดิม ใบใหม่ใช้ค่าใหม่ (versioning)" />
+  <Card><Table head={["Priority", "ระดับ", "Response", "Arrival", "Restoration", "เตือน", "Escalate", "เกิน SLA แจ้ง"]} rows={SLA_DEFAULTS.map((s) => [s.priority, s.label, fmtMin(s.response), fmtMin(s.arrival), fmtMin(s.restoration), `${s.warn}% → ช่าง`, `${s.escalate}% → หัวหน้าบำรุง`, ESCALATION_BREACH_TO[s.priority]])} /></Card>
+  <Card title="กฎ" className="mt-4"><ul className="list-inside list-disc space-y-1 text-sm"><li>นับเวลาต่อเนื่อง 24 ชม.</li><li>Restoration นับจากเครื่องหยุด จนฝ่ายผลิตยืนยันกลับมาผลิตได้</li><li>Waiting for Parts / Production ไม่หยุด Restoration SLA</li><li>Pause ได้เฉพาะกรณีรอฝ่ายผลิต และหัวหน้าฝ่ายผลิตอนุมัติ</li><li>เกิน SLA ต้องระบุสาเหตุก่อนปิดงาน</li><li>เปลี่ยน Priority ต้องมีประวัติ</li></ul></Card></>); }
