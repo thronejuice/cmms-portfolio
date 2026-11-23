@@ -11,7 +11,7 @@ A portfolio project: a Computerized Maintenance Management System (CMMS) built a
 | Phase | State |
 |---|---|
 | Frontend demo (mock data, swappable API layer) | ✅ this repo, `web/` |
-| Go Fiber API + PostgreSQL (Release 1) | planned — see [docs/PLAN.md](docs/PLAN.md) |
+| Go Fiber API + PostgreSQL (Release 1) | planned — see [docs/PLAN.md](docs/PLAN.md) and [docs/BACKEND_PLAN.md](docs/BACKEND_PLAN.md) |
 
 ## What the demo shows
 
