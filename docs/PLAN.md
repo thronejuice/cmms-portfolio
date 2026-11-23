@@ -52,6 +52,7 @@
 ยืนยัน workflow/ตัวเลข SLA กับผู้ใช้ · เก็บรายการเครื่อง pilot (1 โรงงาน + 1 พื้นที่) · นิยาม KPI · EHS กำหนด checklist ความปลอดภัย
 
 ### Release 1 — BM + Assets + Requests (≈ 8–10 สัปดาห์)
+> รายละเอียดฝั่ง backend (data model, API, SLA engine, phase B0–B7) ดู [BACKEND_PLAN.md](BACKEND_PLAN.md) — ประมาณการ backend อยู่ที่ ~14–16 สัปดาห์ จึงต้องทบทวนช่วงเวลานี้
 - **R1.1 Foundation:** monorepo `api/` (Go Fiber), PostgreSQL+GORM migrations, auth (argon2 + session/JWT), RBAC + scope (plant/area/line), audit log, CI
 - **R1.2 Master data:** plants/areas/lines/assets + QR, failure taxonomy, `maintenance_sla_configs` + `maintenance_sla_escalations`
 - **R1.3 Reporting & Triage:** breakdown report + MinIO attachments, triage, duplicate/cancel/reject, in-app notifications
