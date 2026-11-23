@@ -1,0 +1,8 @@
+# Portfolio demo: frontend only (mock data, no backend/DB needed).
+# The Go Fiber API, PostgreSQL and MinIO services are added in Release 1 (see docs/PLAN.md).
+services:
+  web:
+    build: ./web
+    ports: ["3000:3000"]
+    environment:
+      NEXT_PUBLIC_API_MODE: mock
